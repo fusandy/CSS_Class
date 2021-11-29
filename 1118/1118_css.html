@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1118 CSS</title>
+    <style>
+    .city {
+        max-width: 800px;
+        height: 250px;
+        background: url('images/city.jpg') center center no-repeat;
+        border: 1px solid black;
+        background-size: 300px 300px;
+    }
+    .contain {
+        background-size: contain;
+    }
+    /* 只宣告contain，只會覆蓋重複的子屬性，其餘會比照.city辦理 */
+    .city.cover {
+        background-size: cover;
+        background-position-y: 20%;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        margin: 15px 0;
+        border: 1px solid black;
+        box-sizing: content-box;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .box2 {
+        width: 200px;
+        height: 200px;
+        margin: 15px 0;
+        border: 1px solid black;
+        box-sizing: border-box;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .box3 {
+        width: 300px;
+        height: 300px;
+        border: 10px dashed rgba(255, 219, 61, 0.424);
+        background: url('./images/nook_small.jpg') repeat ;
+        float: left;
+        margin: 10px;
+        padding: 10px;
+    }
+    /* background-origin預設是padding-box */
+    .border-box {
+        background-origin: border-box;
+    }
+    .padding-box {
+        background-origin: padding-box;
+    }
+    .content-box {
+        background-origin: content-box;
+    }
+    .box4 {
+        width: 300px;
+        height: 300px;
+        border: 10px dashed rgba(251, 16, 16, 0.424);
+        background: url('./images/nook_small.jpg') repeat ;
+        float: left;
+        margin: 10px;
+        padding: 10px;
+        background-origin: padding-box;
+    }
+    /* background-clip預設是border-box */
+    .border-box {
+        background-clip: border-box; 
+    }
+    .padding-box {
+        background-clip: padding-box;
+    }
+    .content-box {
+        background-clip: content-box;
+    } 
+    h1 {
+        clear: left;
+        font-size: 120px;
+        color: transparent;
+        background-image: url('./images/mosaic-3394375_640.jpg');
+        background-clip: text;
+        -webkit-background-clip: text;
+        /* -webkit 為前綴字 */
+        }
+    </style>
+</head>
+<body>
+    <h3>contain等比例縮放，完整顯示整張圖不裁切，因此假設div的寬高與圖片不同時，會出現留白</h3>
+    <h3>cover等比例縮放，填滿整個div區塊不留白，可透過position x與y軸的值調整背景圖片位置</h3>
+    <div class="city"></div>
+    <div class="city contain"></div>
+    <div class="city cover"></div>
+    <h3>box-sizing決定div的CSS寬高給誰，預設值是content</h3>
+    <div class="box1">box sizing:content box</div>
+    <div class="box2">box sizing:border box</div>
+    <h3>圖片要先有origin(起始位置)才能定義clip(裁切)的位置 ; 起始位置預設是padding對齊 ; 裁切位置預設是從border切</h3>
+    <div class="box3 border-box">background origin:border box</div>
+    <div class="box3 padding-box">background origin:padding box</div>
+    <div class="box3 content-box">background origin:content box</div>
+    <div class="box4 border-box">(圖片預設是padding對齊時)background clip:border box</div>
+    <div class="box4 padding-box">(圖片預設是padding對齊時)background clip:padding box</div>
+    <div class="box4 content-box">(圖片預設是padding對齊時)background clip:content box</div>
+    <h1>Hello World!</h1>
+</body>
+</html>

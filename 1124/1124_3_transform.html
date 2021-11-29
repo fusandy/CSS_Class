@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: darkseagreen;
+            margin: 10px;
+            transition: 0.5s;
+            transform-origin: 200px 50px;
+        }
+
+        .trans1:hover{
+            transform: translatex(100px);
+            transition:1.5s;
+        }
+        .trans2:hover{
+            transform: translate(100px, 100px) rotate(45deg) ;
+        }
+        .wrap{
+            width: 100px;
+            height: 100px;
+            
+        }
+        .wrap:hover .trans3{
+            transform: translate(100px, 100px) rotate(45deg) ;
+        }
+        /* 用wrap包一個範圍，滑鼠在wrap範圍內，變形的是trans3，相對trans2不會有中風的感覺 */
+
+        .wrap:hover .trans4{
+            border-radius: 50%;
+            transform: translatex(100px) rotate(180deg) scale(50%);
+        }
+
+        .wrap:hover .trans5{
+            transform: skew(50deg,0);
+            box-shadow: 0 0 5px 5px black;
+        }
+
+        .wrap:hover .trans6{
+            transform: rotate(90deg) scale(150%);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box trans1"></div>
+    
+    <div class="box trans2"></div>
+
+    <div class="wrap">
+        <div class="box trans3"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="box trans4"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="box trans5"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="box trans6"></div>
+    </div>
+</body>
+</html>

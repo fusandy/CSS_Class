@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Fit</title>
+    <style>
+        .box{
+            width: 40%;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .box img{
+            width: 100%;
+            height: 100%;
+        }
+        .fill{
+            object-fit: fill;
+        }
+        .contain{
+            object-fit: contain;
+            object-position: 20% 20%;
+            /* 不裁切，故短邊高度固定(y軸)下，只有x軸下20%有效 */
+            /* object-fit: 20px 20px; */
+            /* px寫死，xy都可以調 */
+        }
+        .cover{
+            object-fit: cover;
+            object-position: 50% 50%;
+            /* 依照div寬高按比例縮放，故依照現在的容器寬度(x軸)吃100%，只有y軸下50%有效用 */
+        }
+        .none{
+            object-fit: none;
+            object-position: 50% 20%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img class="fill" src="./images/ex1_pic1.jpg" alt="photo">
+    </div>
+    
+    <div class="box">
+        <img class="contain" src="./images/ex1_pic1.jpg" alt="photo">
+        <!-- 在限制範圍內，圖片不裁切的原則下，顯示最大比例 -->
+    </div>
+    
+    <div class="box">
+        <img class="cover" src="./images/ex1_pic1.jpg" alt="photo">
+        <!-- 在限制範圍內，等比例填滿區塊元素，超出去的裁切 -->
+    </div>
+    
+    <div class="box">
+        <img class="none" src="./images/ex1_pic1.jpg" alt="photo">
+    </div>
+</body>
+</html>

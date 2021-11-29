@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip path</title>
+    <style>
+    .row{
+        display: flex;
+        flex-direction: row;
+    }
+    .circle{
+        clip-path: circle(25% at 55% 30%);
+    }
+    .ellipse{
+        clip-path: ellipse(25% 50% at 50% 50%) ;
+    }
+    .inset{
+        clip-path: inset(5px 10px 20px 30px round 10% 20% 30% 50%);
+    }
+    .polygon{
+        clip-path:polygon(0% 100%, 50% 0%,100% 100%);
+    }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="box">
+            <img class="circle" src="./images/ex1_pic1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="ellipse" src="./images/ex1_pic1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="inset" src="./images/ex1_pic1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="polygon" src="./images/ex1_pic1.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

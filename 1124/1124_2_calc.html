@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .left{
+            /* width: 100%; */
+            width: calc(100% - 200px);
+            /* 要有空格!!!!! */
+            height: 100vh;
+            /* 100vh=高度滿版 */
+            background-color: coral;
+            float: left;
+        }
+        .right{
+            width: 200px;
+            height: 100vh;
+            background-color: darkkhaki;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">Left</div>
+    <div class="right">Right</div>
+</body>
+</html>

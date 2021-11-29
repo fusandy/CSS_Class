@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            /* transition: all 1s ease; */
+            transition: all 1s cubic-bezier(.17,.67,.91,.09);
+        }
+        .box:hover{
+            width: 500px;
+        }
+        /* transition預設是all，子屬性不分開宣告，all可不寫。 */
+        /* 貝茲曲線預設是ease，另有 linear/ease-in/ease-out/ease-in-out */
+        /* cubic-bezier貝茲曲線，可將想要的加入度感複製到CSS */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background: burlywood;
+            transition: background .5s, width 2s ease-in 1s;
+        }
+        /* transition子屬性各別下設定值與秒數的話，hover漸變時，會根據不同屬性的不同秒數作變化 */
+        /* 下方變化: 背景變色0.5秒，長度變化2s，ease-in，漸變延遲1s再開始 */
+        .box1:hover{
+            width: 500px;
+            background:cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>em rem</title>
+    <style>
+        html{
+            font-size: 30px;
+        }
+        .em{
+            font-size: 1.2em;
+        }
+        .rem{
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="em">
+        em1
+        <div class="em">
+            em2
+            <div class="em">
+                em3
+            </div>
+        </div>
+    </div>
+    <!-- em會受架構影響 -->
+
+    <div class="rem">
+        rem1
+        <div class="rem">
+            rem2
+            <div class="rem">
+                rem3
+            </div>
+        </div>
+    </div>
+    <!-- rem不受架構影響，遵循html的font-size尺寸去做設定倍數的調整 -->
+    <!-- 1em=16px，只要是px的單位都可以轉換為rem -->
+    
+</body>
+</html>

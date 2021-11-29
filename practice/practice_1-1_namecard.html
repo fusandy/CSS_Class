@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice1-1 name card</title>
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+        .wrap {
+            width: 200px;
+            min-height: 200px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px rgb(32, 32, 32);
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            text-align: center;
+            padding: 15px;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            /* 爆版以外的部分隱藏 */
+            margin: auto;
+        }
+        .box1 img {
+            width: 100%;
+            height: auto;
+            /* 寬度以父層100px的100%;高度依據寬度等比例縮放 */
+            /* 不要在img上做CSS設定，切版時以div為主 */
+        }
+        .box2 {
+            width: 90%;
+            border: 10px solid transparent;
+            border-image: url('./images/border-image.png') 20 round;
+            margin: 15px auto;
+        }
+        .box2 h2 {
+            width: 70%;
+            margin: auto;
+            border-bottom: 1px solid gray;
+        }
+        .btn {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, rgb(235, 172, 121),rgb(247, 98, 98));
+        }
+        .btn:hover {
+            background: linear-gradient(to bottom,rgb(235, 197, 167), rgb(233, 151, 85),rgb(247, 98, 98) 80%) ;
+            box-shadow: 2px 2px 5px gray;
+            color:white;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box1">
+            <img src="images/ex1_pic1.jpg" alt="circle">
+        </div>      
+        <div class="box2">
+                <h2>Jean</h2>
+                <p>Hello, nice to meet you.</p>
+        </div>
+        <div class="btn">
+                Follow Me
+        </div>
+    </div>
+</body>
+</html>

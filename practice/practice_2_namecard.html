@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1119 Practice</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .wrap {
+            width: 600px;
+            height: 300px;
+            background-color: wheat;
+            display: flex;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px rgb(0, 0, 0);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        .wrap:hover {
+            background: rgb(104, 194, 216);
+            transition: 0.5s;
+            color: white;
+            border: 5px solid white;
+            box-shadow: 20px 20px 20px #000;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .box {
+            padding: 20px;
+            flex: none;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .box1>img {
+            width: 100%;
+            height: auto;
+        }
+        .box2 {
+            width: 200px;
+            border-bottom: 1px solid gray;
+            text-align: center;
+        }
+        .box3 {
+            width: 260px;
+            height: 200px;
+            text-align: justify; 
+            border:10px solid transparent;
+            border-image: url('./images/border-image.png') 20 repeat;
+            padding: 20px;
+            line-height: 15px;
+        }
+        h3 {
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+            <div class="box1">
+                <img src="./images/ex1_pic2.jpg" alt="little_boy">
+            </div>    
+            <div class="box2">
+                <p>My Name Card</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box3">
+                <h3>JACK</h3>
+                <p>Hello! Nice to meet you. </p>
+                <p>My name is Jack. This is my name card.</p>
+            </div>
+        </div>
+
+    </div>    
+</body>
+</html>

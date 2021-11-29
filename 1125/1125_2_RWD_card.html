@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD card</title>
+    <style>
+        .row{
+            display: flex;
+            flex-direction: column;
+        }
+        .col{
+            width: 100%;
+            height: 300px;
+            background-color: rgb(243, 155, 92);
+            outline: 1px solid black;
+            display: flex;
+            justify-content: center;
+        }
+        /* outline不會爆版 */
+        @media screen and (min-width:768px){
+            .row{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .col{
+                width: 50%;
+            }
+        }
+        /* 寬度大於768時，col展示兩格一排，12等份分兩格，一格50% */
+        /* 並用wrap換行，不然默認會shrink一起縮小 */
+        @media screen and (min-width:1200px){
+            .col{
+                width: 33.33%;
+            } 
+        }
+        /* 寬度大於1200時，col展示三格一排，12等份分三格，一格33.33% */
+        /* row的屬性值不用重複寫，因為768px以上都吃同樣的設定 */
+        /* col之間要拉開距離，請用padding往內縮!!!!用margin會爆版!!!!! */
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">1</div>
+            </div>
+            <div class="col">
+                <div class="card">card2</div>
+            </div>
+            <div class="col">
+                <div class="card">card3</div>
+            </div>
+            <div class="col">
+                <div class="card">card1</div>
+            </div>
+            <div class="col">
+                <div class="card">card2</div>
+            </div>
+            <div class="col">
+                <div class="card">card3</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

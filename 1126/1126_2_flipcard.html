@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animation</title>
+    <style>
+        .card-wrap{
+            width: 300px;
+            height: 400px;
+            margin: 200px;
+            /* animation: rotateY 1.5s ease-in-out; */
+        }
+        .card{
+            width: 300px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 5px 5px 5px #000;
+            transition: 2s;
+            /* transform: skew(30deg, -30deg); */
+        }
+        .card>img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+        }
+        .back{   
+            transform: rotateY(180deg);
+        }
+
+        .card-wrap:hover .card{
+            transform: rotateY(-180deg);
+        }
+/* 
+        @keyframes rotateY{
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            } 
+        } */
+
+        /* 1. card裡面包兩張image，將圖片處理好後，用card做3D翻轉效果 */
+        /* 2. img重疊，並將兩者的backface-visibility設定hidden，小男孩y軸翻轉180度 */
+        /* 3. 設定hover在card-wrap時，card整體翻轉180度 */
+    </style>
+</head>
+<body>
+
+<div class="card-wrap">
+    <div class="card">
+        <img class="front" src="./images/ex1_pic1.jpg" alt="">
+        <img class="back" src="./images/ex1_pic2.jpg" alt="">
+    </div>
+</div>
+    
+</body>
+</html>

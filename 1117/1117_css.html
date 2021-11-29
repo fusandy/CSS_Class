@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1117 CSS</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(245, 211, 137);
+            margin: 20px;
+            float: left;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(245, 211, 137);
+            border-radius: 10px 100px 10px;
+            margin: 20px;
+            float: left;
+        }
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(245, 211, 137);
+            border-radius: 50%;
+            margin: 20px;
+            float: left;
+        }
+        .box4 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(245, 211, 137);
+            border-radius: 100% 0 0 0;
+            margin: 20px;
+            float: left;
+        }
+        .box5 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(245, 211, 137);
+            border-top-left-radius: 20px 50px;
+            border-top-right-radius: 30px 80px;
+            border-bottom-right-radius: 50px 50px;
+            border-bottom-left-radius: 5px 50px;
+            /* 也可以一行解決border-radius: 20px 30px 50px 5px / 50px 80px 50px 50px; */
+            margin: 20px;
+            float: left;
+        }
+        .box6 {
+            /* 小圖放大變成div的邊框 */
+            /* 要先下border才能嵌入圖片 */
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: blanchedalmond;
+            border: 20px solid transparent;
+            border-image: url('./images/border-image.png') 20 repeat;
+            /* border-image: url('./images/border-image.png');
+            border-image-slice: 20;
+            border-image-repeat: repeat; */
+            /* 可以一行完成，也可以分三行寫 */
+            clear: left;
+        }
+        .box7 {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            border: 3px solid black;
+            outline: 3px solid red;
+            outline-offset: 3px;
+            transition: 0.3s;
+            padding: 10px;
+        }
+        .box7:hover {
+            outline-offset: -9px;
+        }
+        .box8 {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: burlywood;
+            box-shadow: 5px 5px 10px rgb(82, 82, 82);
+            transition: 0.3s;
+            float: left;
+        }
+        /* 陰影基本參數 : x軸 y軸 模糊度 顏色 */
+        .box8:hover {
+            box-shadow: 10px 10px 15px rgba(82, 82, 82, 0.623);
+        }
+        /* 利用hover做滑鼠動態效果 */
+        .box9 {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            margin: 20px;
+            box-shadow: 5px 10px 10px 5px rgb(82, 82, 82);
+            float: left;
+        }
+        /* 陰影完整參數 : x軸 y軸 模糊度 擴散 顏色 內陰影 */
+        .box10 {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            margin: 20px;
+            box-shadow: 0 0 10px #000 inset;
+            float: left;
+        }
+        .box11 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 70px 20px red inset, 0 0 60px orange inset, 0 0 90px orange;
+            float: left;
+        }
+        .box12 {
+            width: 60px;
+            height: 60px;
+            background-color: rgb(85, 85, 85);
+            margin: 100px 20px;
+            border-radius: 50%;
+            box-shadow: 35px 45px 0 15px rgb(85, 85, 85),70px 0 0 0 rgb(85, 85, 85);
+            float: left;
+        }
+        .box13 {
+            width: 800px;
+            height: 450px;
+            background: url('./images/1.png') 95% 60% no-repeat, 
+            url('./images/2.png') 2% 62% no-repeat,
+            url('./images/3.png') 60% 2% no-repeat,
+            url('./images/map1.jpg');
+            background-size: 0%, 0%, 0%, auto;
+            transition: 0.5s;
+            /* background: url('相對位置') x軸 y軸 repeat與否，可用逗號疊加，但先寫的在最上層 */
+            clear: left;
+        }
+        .box13:hover {
+            background: url('./images/1.png') 95% 60% no-repeat, 
+            url('./images/2.png') 2% 62% no-repeat,
+            url('./images/3.png') 60% 2% no-repeat,
+            url('./images/map1.jpg');
+            background-size: 10%, 10%, 10%, auto;
+        }
+        h2 {
+            clear:left;
+            color: rgb(180, 38, 38);
+        }
+        .wrap {
+            position:relative;
+            width: 200px;
+            height: 200px;
+        }
+        .box14 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50% 60% 50% 45% / 60% 40% 60% 50%;
+            position: absolute;
+            animation: rotate 3.5s linear infinite;
+        }
+        .box15 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 60% 40% 50% 50% / 60% 50% 60% 40%; 
+            position: absolute;
+            animation: rotate 1.5s linear infinite;
+        }
+        .box16 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50% 50% 60% 50% / 60% 60% 50% 60%;
+            position: absolute;
+            animation: rotate 2.5s linear infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .box17 {
+            font-size: 30px;
+            text-shadow: 2px 3px 5px gray;
+        }
+        .box18 {
+            font-size: 30px;
+            text-shadow: 0 0 8px rgb(255, 0, 0), 0 0 5px yellow;
+        }
+        .box19 {
+            font-size: 30px;
+            text-shadow: 1px 1px rgb(200,200, 200),1px 2px rgb(120,120, 120),2px 2px rgb(80,80, 80);
+        }
+        .box20 {
+            font-size: 30px;
+            color: #fff;
+            text-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Border Radius</h2>
+    <h3>表示方法(斜線只能一個): </h3>
+    <h3>(box1)border-radius: x軸 y軸; 或是 border-radius: 左上 右上 右下 左下;</h3>
+    <h3>(box2)border-radius: 左上 右上左下(對角線) 右下;</h3>
+    <h3>(box3)border-radius: 50%; 以左上角(x=0,y=0)的x軸50%、y軸50%找到中心畫圓弧</h3>
+    <h3>(box4)border-radius: 100% 0 0 0; 以左上角(x=0,y=0)的x軸100%、y軸100%，其餘三個角為0</h3>
+    <h3>(box5)border-radius: 20px 30px 50px 5px / 50px 80px 50px 50px; 四角不同弧度切法</h3>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+    <div class="box5">box5 </div>
+
+    <h2>如何將設計圖變成區塊邊框</h2>
+    <div class="box6">box6</div>
+
+    <h2>border與outline的綜合應用，並使用hover位移特效</h2>
+    <h3>outline預設在border之外，可用outline-offset設置兩者距離</h3>
+    <h3>outline的寬高不影響div寬高</h3>
+    <div class="box7">box7</div>
+
+    <h2>Box Shadow</h2>
+    <h3>表示方法: </h3>
+    <h3>box-shadow: x軸 y軸 模糊 (擴散) 顏色 (inset內陰影)</h3>
+    <h3>(box8) box-shado搭配hover的應用</h3>
+    <h3>(box9) 加入擴散spread的參數</h3>
+    <h3>(box10) 內陰影inset</h3>
+    <h3>(box11) 陰影重疊，先寫先贏，前蓋後</h3>
+    <h3>(box12) 利用左側灰色圓形為主，利用陰影位移製作圖片</h3>
+    <div class="box8">box8</div>
+    <div class="box9">box9</div>
+    <div class="box10">box10</div>
+    <div class="box11">box11</div>
+    <div class="box12">box12</div>
+
+    <h2>多重背景與hover的搭配</h2>
+    <h3>表示方法: </h3>
+    <h3>background: url('') x軸 y軸 repeat與否</h3>
+    <h3>子屬性也可開寫: image/position/repeat</h3>
+    <h3>若多重背景，需用逗號隔開</h3>
+    <h3>transition是漸變</h3>
+    <div class="box13">box13</div>
+
+    <h2>Border radius結合Javascript變化題</h2>
+    <div class="wrap">
+        <div class="box14"></div>
+        <div class="box15"></div>
+        <div class="box16"></div>
+    </div>
+
+    <h2>Text Shadow</h2>
+    <h3>表示方法:</h3>
+    <h3>text-shadow: x軸 y軸 模糊 顏色</h3>
+    <div class="box17">
+        <p>Shadow</p>
+    </div>
+    <div class="box18">
+        <p>螢光字Shadow</p>
+    </div>
+    <div class="box19">
+        <p>立體字Shadow</p>
+    </div>
+    <div class="box20">
+        <p>斜影字Shadow</p>
+    </div>
+</body>
+</html>

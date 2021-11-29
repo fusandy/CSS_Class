@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Gradient</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .box1{
+            background:linear-gradient(red, orange, yellow, green, blue);
+        }
+        .box2{
+            background:linear-gradient(to right, red, orange, yellow, green, blue);
+        }
+        .box3{
+            background:linear-gradient(135deg, red, orange, yellow, green, blue, purple);
+        }
+        .box4{
+            background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+        }
+        .box5{
+            background:linear-gradient(to right, rgb(73, 146, 175) 50%, rgb(223, 143, 51) 50%)
+        }
+        .box6{
+            background-color: #FA8BFF;
+            background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+        }
+        .box7{
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+            background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+        }
+        .box8{
+            height: 100px;
+            background:linear-gradient(rgba(255, 192, 203, 0.5) 50%, rgba(255, 255, 0, 0.5) 50%), linear-gradient(to right,pink 50%, yellow 50%);
+            background-size: 20px 20px;
+            /* background-repeat: no-repeat; */
+            /* 預設值是repeat填滿 */
+            
+        }
+        .box9{
+            background: repeating-linear-gradient(to right, rgb(255, 2, 137) 25%, rgb(243, 86, 86) 50%, hotpink 75%);
+        }
+        .box10{
+            background: radial-gradient(purple, yellow 25%, red 100%);
+        }
+        .box11{
+            background: radial-gradient(circle, purple, yellow 25%, red 100%);
+        }
+        .box12{
+            background: radial-gradient(at 75% 20px, rgb(245, 181, 78) , rgb(250, 138, 216),rgb(132, 236, 240));
+        }
+        .box13{
+            background: repeating-radial-gradient(circle, rgb(78, 76, 206), rgb(52, 202, 248) 8%, rgb(76, 73, 248) 16%, rgb(78, 76, 206) 25%);
+        }
+        h1{
+            font-size: 100px;
+            background: radial-gradient(at 75% 20px, rgb(245, 181, 78) , rgb(250, 138, 216),rgb(132, 236, 240));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Gradient 多重漸層</h2>
+    <h3>要把漸層看成一張圖並寫在background上，而非background-color(子屬性)</h3>
+    <h3>linear-gradient線性漸層(預設方向是to bottom) ; radial-gradient放射狀漸層</h3>
+    <h3>background: linear-gradient(方向/角度 , 顏色1(起始) %(起始色佔的百分比) , 顏色2 % , 顏色3(終結) %(最後一個顏色的起始位置))</h3>
+    <h3>background: repeating-linear-gradient</h3>
+    <h3>多重漸層一樣比照"前蓋後"邏輯</h3>
+    <div class="box box1">Normal</div>
+    <div class="box box2">To right</div>
+    <div class="box box3">135 degree</div>
+    <div class="box box4">From Web</div>
+    <div class="box box5">50%</div>
+    <div class="box box6">顏色比例分配</div>
+    <div class="box box7">多重背景一</div>
+    <div class="box box8">多重背景二 : 利用to bottom(預設)與to right重疊，先寫的在最上層</div>
+    <div class="box box9">重複漸層: 第一個顏色%為起始點，最後一個顏色%為終點，其他重複</div>
+    <div class="box box10">放射狀漸層: 預設ellipse，橢圓形方式漸變</div>
+    <div class="box box11">圓形漸層</div>
+    <div class="box box12">調整放射狀圓心: x軸75%，y軸20px的位置為圓心</div>
+    <div class="box box13">重複漸層</div>
+    <h1>Hello World</h1>
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Overflow</title>
+    <style>
+        .box1>p{
+            width: 30%;
+            border: 1px solid black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .box2>p{
+            width: 30%;
+            border: 1px solid black;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .container{
+            max-width: 80%;
+            /* margin: auto; */
+        }
+        p{
+            border: 1px solid black;
+        }
+        .normal{
+            word-break: normal;
+            word-wrap: break-word;
+        }
+        .break-all{
+            word-break: break-all;
+        }
+        .keep-all{
+            word-break: keep-all;
+        }
+        @font-face{
+            font-family: balloon;
+            src: url('./font/BALLOONS.TTF');
+        }
+        h2{
+            font-size: 100px;
+            font-family: balloon;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Text Overflow</h1>
+    <h3>white-space:nowrap(預設:normal) / overflow:hidden / text-flow:ellipis 要一啟用才有效果 </h3>
+    <div class="box1">
+        <h3>溢版時，顯示單行</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nostrum mollitia non quas iste ad! Culpa odit temporibus, architecto, maiores laborum aut quas ab maxime illum quasi ea obcaecati repellat!</p>
+    </div>
+    <div class="box2">
+        <h3>溢版時，顯示多行</h3>
+        <h3>-webkit-line-clamp:行數 / -webkit-box-orient: 超出範圍的垂直排列</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita qui similique libero, nihil molestias iure minus adipisci, velit inventore consectetur tempore, veniam repellendus nesciunt facilis ad omnis optio aliquam.
+        Et explicabo dicta impedit neque? Consectetur voluptatum porro magnam quae eaque est. Eligendi commodi aut officiis amet eos, hic rem esse quasi mollitia beatae non unde aperiam doloremque dolorum odit.</p>
+    </div>
+
+
+    <h1>Word Break</h1>
+    <div class="container">
+        <h3>word-break:normal </h3>
+        <h3>當容器達最窄寬度，字尾英文單字放不下時，會自動將單字換行，原位置留白。</h3>
+        <h3>搭配 word-wrap:break-word</h3>
+        <p class="normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, modi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, modi. Pneumonoultramicroscopicsilicovolcanoconiosis. Perspiciatis eius ipsa molestias debitis non commodi nemo inventore cupiditate, facere explicabo? Porro sit maiores, quisquam dicta atque odio laborum! 電話站點皮膚更新讓她並不商業那麼多烏日最為傳輸各項詢問為了，本身一旦再度食物回頭有機會指南為了堅持教材溫暖，防止時期不可女孩重新通知寫真理念回答空間這款系統，大眾不太，先後風格結果根據直播主，情感塑膠期限條件從事居民，父母讓她裝備，很快主板一位，字幕更加。</p>
+
+        <h3>word-break:break-all</h3>
+        <h3>當容器達最窄寬度，字尾英文單字會被切斷換行。</h3>
+        <p class="break-all">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, modi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, modi. Pneumonoultramicroscopicsilicovolcanoconiosis. Perspiciatis eius ipsa molestias debitis non commodi nemo inventore cupiditate, facere explicabo? Porro sit maiores, quisquam dicta atque odio laborum! 電話站點皮膚更新讓她並不商業那麼多烏日最為傳輸各項詢問為了，本身一旦再度食物回頭有機會指南為了堅持教材溫暖，防止時期不可女孩重新通知寫真理念回答空間這款系統，大眾不太，先後風格結果根據直播主，情感塑膠期限條件從事居民，父母讓她裝備，很快主板一位，字幕更加。</p>
+
+        <h3>word-break:keep-all</h3>
+        <h3>設計來處理CJK(Chinese Japanese Korean)，以句子為單位，不換行，少用。</h3>
+        <p class="keep-all">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, modi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, modi. Pneumonoultramicroscopicsilicovolcanoconiosis. Perspiciatis eius ipsa molestias debitis non commodi nemo inventore cupiditate, facere explicabo? Porro sit maiores, quisquam dicta atque odio laborum! 電話站點皮膚更新讓她並不商業那麼多烏日最為傳輸各項詢問為了，本身一旦再度食物回頭有機會指南為了堅持教材溫暖，防止時期不可女孩重新通知寫真理念回答空間這款系統，大眾不太，先後風格結果根據直播主，情感塑膠期限條件從事居民，父母讓她裝備，很快主板一位，字幕更加。</p>
+    </div>
+
+    <div class="font">
+        <h1>Font Face</h1>
+        <h2>Hello World</h2>
+    </div>  
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .wrap {
+            position: relative;
+            background: black;
+        }
+        /* 將background與h1解除父子層，變成同一層，故position:relative要改設定在最外層容器上 */
+
+
+        .background {
+            height: 800px;
+            background: url('./images/Musee\ du\ Louvre.jpg') center center/cover no-repeat;
+            opacity: 1;
+        }
+        h1 {
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            color: white;
+            text-align: center;
+            opacity: 0.3;
+            width: 100%;
+            position: absolute;
+            bottom: 0%;
+        }
+        .wrap:hover .background{
+            opacity: 0.7;
+        }
+        .wrap:hover  h1{
+            background-color: black;   
+            opacity: 1;
+        }
+        /* opacity的透明度:子層會受父層影響，故兩者要調整成同一層。 */
+        /* hover設置在wrap(容器)上，但可以改子層的設定 */
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="background"></div>
+        <h1>Paris</h1>
+    </div>
+
+    <h3>position: absolute / relative / fixed / sticky / static(預設)</h3>
+    <h3>absolute:原地起飛，六親不認，寬高會消失，必須以父層為參考值重新寫回來</h3>
+    <h3>relative:原地起飛，以原位置相對位移，寬高還在，故對RWD影響大</h3>
+    <h3>除非要重疊區塊元素，不然少用position設定位移!!</h3>
+    <h3>opacity透明度在設置時，子層會受父層影響</h3>
+</body>
+</html>

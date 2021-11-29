@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>letter spacing</title>
+    <style>
+        body{
+            margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(rgb(120, 209, 231) 5px, transparent 5px), linear-gradient(to right, rgb(120, 209, 231) 5px, transparent 5px) ;
+        background-size: 20px 20px;       
+        }
+        .container{
+            width: 800px;
+            background-color: rgba(100, 148, 237, 0.486);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 30px;
+            letter-spacing: 2rem;
+            text-align: center;
+            background-color: cornsilk;
+            text-indent: 2rem;
+            margin: 0;
+        } 
+        /* letter-spacing推多少，text-indent就縮多少，再加text-align就可置中對齊 */
+
+        .text{
+            width: 500px;
+            background-color: rgb(95, 179, 179);
+            margin-bottom: 10px;
+        }
+        .normal{
+            line-height: normal;
+        }
+        .lh15{
+            line-height: 1.5;
+        }
+        .lh5{
+            line-height: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Lorem ipsum</p>
+    </div>
+
+    <div class="text">
+        <div class="normal">line height:normal</div>
+    </div>
+
+    <div class="text">
+        <div class="lh15">line height:1.5倍</div>
+    </div>
+
+    <div class="text">
+        <div class="lh5">line height:5倍</div>
+    </div>
+</body>
+</html>

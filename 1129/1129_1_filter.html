@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+        .row{
+            display: flex;
+            flex-direction: row;
+        }
+        .grayscale{
+            filter:grayscale(1);
+        }
+        /* 1=100% */
+        .sepia{
+            filter:sepia(1);
+        }
+        .brightness{
+            filter:brightness(.8);
+        }
+        .blur{
+            filter:blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="box">
+            <img class="grayscale" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="sepia" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="brightness" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="blur" src="./images/nook_small.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

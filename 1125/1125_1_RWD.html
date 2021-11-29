@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD</title>
+    <style>
+        h1{
+            color: brown;
+        }
+        /* 全尺寸是brown，當寬度符合media的範圍，才會進到media內的屬性 */
+        /* 尺寸介於500px-899px時，顏色是cadeblue */
+        /* 尺寸介於900px-1199時，顏色是(46, 41, 126) */
+        /* 尺寸1200以上，顏色是(253, 227, 77) */
+        
+        @media  screen and (min-width:500px) {
+            h1{
+                color: cadetblue;
+                font-size: 50px;
+            }
+        }
+        @media  screen and (min-width:900px) {
+            h1{
+                color: rgb(46, 41, 126);
+                font-size: 100px;
+            }
+        }
+        @media  screen and (min-width:1200px) {
+            h1{
+                color: rgb(253, 227, 77);
+                font-size: 150px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
