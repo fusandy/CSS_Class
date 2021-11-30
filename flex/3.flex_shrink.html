@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shrink</title>
+    <style>
+        .wrap{
+            border: 1px solid red;
+            display: flex;
+            gap:15px;
+        }
+        .box{
+            width: 600px;
+            height: 200px;
+            background-color: rgb(243, 228, 90);
+            flex-shrink: 1;           
+        }
+        .box2{
+            flex-shrink: 0;
+        }
+        /* 瀏覽器空間有限時，預設都有shrink權重1，box2改為0則強制不要縮 */
+    </style>
+</head>
+<body>
+    <h1>flex三兄弟:shrink</h1>
+    <h3>預設權重都是1，空間不夠時，所有item按比例一起縮小</h3>
+    <h3>三個box都是600*200px，正常瀏覽器已自動縮小，但box2權重下了0，堅持維持600px寬。</h3>
+    <div class="wrap">
+        <div class="box">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box">box3</div>
+    </div>
+</body>
+</html>

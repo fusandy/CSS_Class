@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wrap</title>
+    <style>
+        .wrap{
+            width: 100%;
+            height: 1000px;
+            border: 1px solid gray;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            /* align-content: flex-end; */
+        }
+
+        .box{
+            width: 300px;
+            height: 200px;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>wrap</h1>
+    <h3>超過容器寬度的時候item自動換行</h3>
+    <h3>換行後，使用align-content操作次軸對齊</h3>
+    <h4>ex.1</h4>
+    <h4>每個item寬300px，瀏覽器縮小時使用wrap換行，整包content可以再使用align-content對齊</h4>
+    <div class="wrap">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+    </div>
+    
+</body>
+</html>

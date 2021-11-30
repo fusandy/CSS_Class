@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grow</title>
+    <style>
+        .wrap{
+            border: 1px solid red;
+            display: flex;
+            gap:15px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: darksalmon;
+            flex-grow: 0;           
+        }
+        .box2{
+            flex-grow: 1;
+        }
+        /* 瀏覽器空間有剩餘時，權重大，flex-grow優先長大 */
+    </style>
+</head>
+<body>
+    <h1>flex三兄弟:grow</h1>
+    <h3>預設權重都是0，空間還有剩時，權重比較大的會長大佔據剩餘空間</h3>
+    <h3>三個box都是200*200px，瀏覽器有剩餘空間，box2權重為1，其餘為0，故box2長大撐滿整個空間</h3>
+    <div class="wrap">
+        <div class="box">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box">box3</div>
+    </div>
+</body>
+</html>
