@@ -10,7 +10,7 @@
             width: 300px;
             height: 400px;
             margin: 200px;
-            /* animation: rotateY 1.5s ease-in-out; */
+            animation: rotateY 1.5s infinite ease-in-out;
         }
         .card{
             width: 300px;
@@ -21,8 +21,8 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 5px 5px 5px #000;
-            transition: 2s;
-            /* transform: skew(30deg, -30deg); */
+            /* transition: 2s; */
+            transform: skew(30deg, -30deg);
         }
         .card>img{
             width: 100%;
@@ -34,22 +34,23 @@
             left: 0;
             backface-visibility: hidden;
         }
-        .back{   
+        .back{
+            
             transform: rotateY(180deg);
         }
 
-        .card-wrap:hover .card{
-            transform: rotateY(-180deg);
-        }
-/* 
+        /* .card-wrap:hover .card{
+            transform: rotateY(180deg);
+        } */
+
         @keyframes rotateY{
             from{
                 transform: rotateY(0deg);
             }
             to{
                 transform: rotateY(360deg);
-            } 
-        } */
+            }
+        }
 
         /* 1. card裡面包兩張image，將圖片處理好後，用card做3D翻轉效果 */
         /* 2. img重疊，並將兩者的backface-visibility設定hidden，小男孩y軸翻轉180度 */
